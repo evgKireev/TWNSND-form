@@ -1,0 +1,18 @@
+@import '_vars.scss';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', Roboto, system-ui, Tahoma, sans-serif;
+  font-weight: 500;
+  background-color: $bg;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
