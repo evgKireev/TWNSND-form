@@ -24,7 +24,7 @@ export enum InputTypeEnum {
   LastName = 'lastname',
   FerstName = 'ferstname',
 }
-console.log(styles)
+
 const Input: React.FC<InputType> = ({
   type,
   labelText,

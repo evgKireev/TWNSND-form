@@ -72,8 +72,12 @@ const SignUp = () => {
 
   const passworwHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value)
-    if (e.target.value.length < 8) {
-      setPasswordError('*Пароль должен содержать минимум 8 символов')
+    const re =
+      /(?=.*[0-9])(?=.*[!@#$%^&*_])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*_]{8,}/g
+    if (!re.test(e.target.value)) {
+      setPasswordError(
+        '*Пароль должен содержать минимум 8 символов, 1 заглавную букву, 1 спецсимвол, 1 цифру'
+      )
       setOkPassword(false)
       if (!e.target.value) {
         setPasswordError('*Пароль не может быть пустым')
@@ -87,8 +91,12 @@ const SignUp = () => {
 
   const passworwConfirmHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPasswordConfirm(e.target.value)
-    if (e.target.value.length < 8) {
-      setPasswordConfirmError('*Пароль должен содержать минимум 8 символов')
+    const re =
+      /(?=.*[0-9])(?=.*[!@#$%^&*_])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*_]{8,}/g
+    if (!re.test(e.target.value)) {
+      setPasswordConfirmError(
+        '*Пароль должен содержать минимум 8 символов, 1 заглавную букву, 1 спецсимвол, 1 цифру'
+      )
       setOkPasswordConfirm(false)
       if (!e.target.value) {
         setPasswordConfirmError('*Пароль не может быть пустым')
@@ -106,9 +114,14 @@ const SignUp = () => {
 
   const ferstNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFerstName(e.target.value)
-    if (!e.target.value) {
-      setFerstNameError('*Имя не может быть пустым')
+    const re = /^[а-яА-Я]{2}|[a-zA-Z]{2}$/
+    if (!re.test(e.target.value)) {
+      setFerstNameError('*Имя должно содержать минимум 2 символа')
       setOkName(false)
+      if (e.target.value.length < 1) {
+        setFerstNameError('*Имя должно содержать минимум 2 символа')
+        setOkName(false)
+      }
     } else {
       setFerstNameError('')
       setOkName(true)
