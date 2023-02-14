@@ -1,26 +1,26 @@
-import React, { FC, ReactElement } from 'react'
-import classNames from 'classnames'
-import styles from './Button.module.scss'
+import React, { FC, ReactElement } from "react";
+import classNames from "classnames";
+import styles from "./Button.module.scss";
 
 export enum ButtonTypes {
-  Primary = 'primary',
-  Secondary = 'secondary',
-  Icons = 'icons',
+  Primary = "primary",
+  Secondary = "secondary",
+  Icons = "icons",
 }
 
 type ButtonProps = {
-  title: string | ReactElement
-  type: ButtonTypes
-  onClick?: () => void
-  className?: string
-  disabled?: boolean
-  icon?: JSX.Element
-}
+  title: string | ReactElement;
+  type: ButtonTypes;
+  onClick?: () => void;
+  className?: string;
+  disabled?: boolean;
+  icon?: JSX.Element;
+};
 
 const Button: FC<ButtonProps> = (props) => {
-  const { type, title, onClick, className, disabled, icon } = props
+  const { type, title, onClick, className, disabled, icon } = props;
 
-  const buttonClassName = styles[type]
+  const buttonClassName = styles[type];
 
   return (
     <div
@@ -32,7 +32,7 @@ const Button: FC<ButtonProps> = (props) => {
       {icon}
       {title}
     </div>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

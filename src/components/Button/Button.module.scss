@@ -1,8 +1,8 @@
-@import '../../scss//vars';
+@import "../../scss//vars";
 
 .button {
   border-radius: 5px;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 22px;
@@ -95,4 +95,10 @@
 }
 
 @media (max-width: 510px) {
+}
+
+@media (max-width: 320px) {
+  .secondary {
+    padding-inline: 15px;
+  }
 }

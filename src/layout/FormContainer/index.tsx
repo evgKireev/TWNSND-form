@@ -1,14 +1,14 @@
-import { ReactElement } from 'react'
-import styles from './FormContainer.module.scss'
+import { ReactElement } from "react";
+import styles from "./FormContainer.module.scss";
 
 type FormContainerType = {
-  logo: string
-  title: string
-  link: string
-  textLink: string
-  text?: string
-  children: ReactElement
-}
+  logo: string;
+  title: string;
+  link: string;
+  textLink: string;
+  text?: string;
+  children: ReactElement;
+};
 
 const FormContainer: React.FC<FormContainerType> = ({
   logo,
@@ -23,11 +23,10 @@ const FormContainer: React.FC<FormContainerType> = ({
       <div className={styles.logo}>{logo}</div>
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.innerLink}>
-        {textLink === 'Войти' ? <p className={styles.text}>{text}</p> : null}
-        <a
-          className={styles.link}
-          href={link}
-        >
+        {textLink === "Войти" || "Зарегистрироваться" ? (
+          <p className={styles.text}>{text}</p>
+        ) : null}
+        <a className={styles.link} href={link}>
           {textLink}
         </a>
       </div>
@@ -37,7 +36,7 @@ const FormContainer: React.FC<FormContainerType> = ({
         <span>политикой конфиденциальности и условиями использования LOGO</span>
       </div> */}
     </div>
-  )
-}
+  );
+};
 
-export default FormContainer
+export default FormContainer;

@@ -1,12 +1,12 @@
-import SignUp from './pages/SignUp'
-import './scss/app.scss'
+import SignIn from "./pages/SignIn";
+import "./scss/app.scss";
 
 function App() {
   return (
     <div className="container">
-      <SignUp />
+      <SignIn />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
