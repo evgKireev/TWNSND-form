@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import classNames from 'classnames';
-import styles from './ButtonIcon.module.scss';
+import { FC } from 'react'
+import classNames from 'classnames'
+import styles from './ButtonIcon.module.scss'
 
 export enum ButtonTypesIcon {
   FB = 'facebook',
@@ -9,16 +9,16 @@ export enum ButtonTypesIcon {
 }
 
 type ButtonPropsIcon = {
-  type: ButtonTypesIcon;
-  onClick?: () => void;
-  disabled: boolean;
-  icon: JSX.Element;
-};
+  type: ButtonTypesIcon
+  onClick?: () => void
+  disabled: boolean
+  icon: JSX.Element
+}
 
 const ButtonIcon: FC<ButtonPropsIcon> = (props) => {
-  const { type, onClick, disabled, icon } = props;
+  const { type, onClick, disabled, icon } = props
 
-  const buttonClassName = styles[type];
+  const buttonClassName = styles[type]
 
   return (
     <div
@@ -29,7 +29,7 @@ const ButtonIcon: FC<ButtonPropsIcon> = (props) => {
     >
       <div> {icon}</div>
     </div>
-  );
-};
+  )
+}
 
-export default ButtonIcon;
+export default ButtonIcon

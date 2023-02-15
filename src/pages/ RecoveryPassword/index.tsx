@@ -28,10 +28,7 @@ const RecoveryPassword = () => {
             onChange={(e) => setEmail(e.target.value)}
             onBlur={() => {}}
           />
-          <Button
-            title={'Далее'}
-            type={ButtonTypes.Secondary}
-          />
+          <Button title={'Далее'} type={ButtonTypes.Secondary} />
         </div>
       </>
     </FormContainer>

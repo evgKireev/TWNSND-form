@@ -1,21 +1,21 @@
-import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
-import classNames from 'classnames';
-import styles from './Input.module.scss';
-import { useState } from 'react';
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
+import classNames from 'classnames'
+import styles from './Input.module.scss'
+import { useState } from 'react'
 
 type InputType = {
-  typeInput: InputTypeEnum;
-  disabled: boolean;
-  name: string;
-  labelText: string;
-  type?: string;
-  className?: string;
-  value: string;
-  error?: boolean | undefined;
-  okValidat?: boolean;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
-};
+  typeInput: InputTypeEnum
+  disabled: boolean
+  name: string
+  labelText: string
+  type?: string
+  className?: string
+  value: string
+  error?: boolean | undefined
+  okValidat?: boolean
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onBlur: (e: React.FocusEvent<HTMLInputElement>) => void
+}
 
 export enum InputTypeEnum {
   Password = 'password',
@@ -38,8 +38,8 @@ const Input: React.FC<InputType> = ({
   onChange,
   onBlur,
 }) => {
-  const inputStyles = styles[typeInput];
-  const [checkPassword, setCheckPassword] = useState(false);
+  const inputStyles = styles[typeInput]
+  const [checkPassword, setCheckPassword] = useState(false)
 
   return (
     <div className={styles.wrap}>
@@ -79,7 +79,7 @@ const Input: React.FC<InputType> = ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input
