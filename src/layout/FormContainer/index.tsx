@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import styles from "./FormContainer.module.scss";
+import { ReactElement } from 'react';
+import styles from './FormContainer.module.scss';
 
 type FormContainerType = {
   logo: string;
@@ -23,7 +23,7 @@ const FormContainer: React.FC<FormContainerType> = ({
       <div className={styles.logo}>{logo}</div>
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.innerLink}>
-        {textLink === "Войти" || "Зарегистрироваться" ? (
+        {textLink === 'Войти' || 'Зарегистрироваться' ? (
           <p className={styles.text}>{text}</p>
         ) : null}
         <a className={styles.link} href={link}>

@@ -1,7 +1,7 @@
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import classNames from "classnames";
-import styles from "./Input.module.scss";
-import { useState } from "react";
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+import classNames from 'classnames';
+import styles from './Input.module.scss';
+import { useState } from 'react';
 
 type InputType = {
   typeInput: InputTypeEnum;
@@ -18,11 +18,11 @@ type InputType = {
 };
 
 export enum InputTypeEnum {
-  Password = "password",
-  ConfirmPassword = "confirm",
-  Email = "email",
-  LastName = "lastname",
-  FerstName = "ferstname",
+  Password = 'password',
+  ConfirmPassword = 'confirm',
+  Email = 'email',
+  LastName = 'lastname',
+  FerstName = 'ferstname',
 }
 
 const Input: React.FC<InputType> = ({
@@ -49,7 +49,7 @@ const Input: React.FC<InputType> = ({
         onChange={onChange}
         value={value}
         name={name}
-        type={checkPassword ? "text" : type}
+        type={checkPassword ? 'text' : type}
         className={classNames(styles.input, inputStyles, className, {
           [styles.disabled]: disabled,
           [styles.errorInput]: error,
@@ -60,17 +60,17 @@ const Input: React.FC<InputType> = ({
         className={classNames(styles.label, {
           [styles.setlabel]: value,
           [styles.errorLabel]: error,
-          [styles.eldiz]: typeInput === "lastname",
+          [styles.eldiz]: typeInput === 'lastname',
           [styles.setlabelPassword]:
-            (typeInput === "password" || typeInput === "confirm") && value,
+            (typeInput === 'password' || typeInput === 'confirm') && value,
           [styles.setlabelName]:
-            (typeInput === "lastname" || typeInput === "ferstname") && value,
+            (typeInput === 'lastname' || typeInput === 'ferstname') && value,
         })}
         htmlFor="text1"
       >
         {labelText}
       </label>
-      {(typeInput === "password" || typeInput === "confirm") && (
+      {(typeInput === 'password' || typeInput === 'confirm') && (
         <div
           className={styles.eye}
           onClick={() => setCheckPassword(!checkPassword)}

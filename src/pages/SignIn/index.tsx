@@ -1,22 +1,22 @@
-import { useEffect, useState } from "react";
-import Facebook from "../../assets/SocialMediaIcons/Facebook";
-import { GoogleIcon } from "../../assets/SocialMediaIcons/GoogleIcon";
-import Vk from "../../assets/SocialMediaIcons/Vk";
-import Button, { ButtonTypes } from "../../components/Button";
-import ButtonIcon, { ButtonTypesIcon } from "../../components/ButtonIcon";
-import Input, { InputTypeEnum } from "../../components/Input";
-import { useWindowSize } from "../../hooks/useWindowsSize";
-import FormContainer from "../../layout/FormContainer/index";
-import styles from "./SignIn.module.scss";
+import { useEffect, useState } from 'react';
+import Facebook from '../../assets/SocialMediaIcons/Facebook';
+import { GoogleIcon } from '../../assets/SocialMediaIcons/GoogleIcon';
+import Vk from '../../assets/SocialMediaIcons/Vk';
+import Button, { ButtonTypes } from '../../components/Button';
+import ButtonIcon, { ButtonTypesIcon } from '../../components/ButtonIcon';
+import Input, { InputTypeEnum } from '../../components/Input';
+import { useWindowSize } from '../../hooks/useWindowsSize';
+import FormContainer from '../../layout/FormContainer/index';
+import styles from './SignIn.module.scss';
 
 const SignIn = () => {
   const { width = 0 } = useWindowSize();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [okPassword, setOkPassword] = useState<boolean | undefined>(undefined);
   const [okMail, setOkMail] = useState<boolean | undefined>(undefined);
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [emailDirty, setEmailDirty] = useState(false);
   const [passwordDirty, setPasswordDirty] = useState(false);
   const [validForm, setValidForm] = useState(false);
@@ -31,11 +31,11 @@ const SignIn = () => {
 
   const blurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
     switch (e.target.name) {
-      case "Пароль":
+      case 'Пароль':
         setPasswordDirty(true);
         break;
 
-      case "E-mail":
+      case 'E-mail':
         setEmailDirty(true);
         break;
     }
@@ -47,11 +47,11 @@ const SignIn = () => {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(String(e.target.value).toLowerCase())) {
       setEmailError(
-        "*Электронная почта должна быть в допустимом формате электронной почты (например, username@coolexample.com). Пожалуйста, попробуйте еще раз."
+        '*Электронная почта должна быть в допустимом формате электронной почты (например, username@coolexample.com). Пожалуйста, попробуйте еще раз.'
       );
       setOkMail(false);
     } else {
-      setEmailError("");
+      setEmailError('');
       setOkMail(true);
     }
   };
@@ -60,10 +60,10 @@ const SignIn = () => {
     setPassword(e.target.value);
 
     if (!e.target.value) {
-      setPasswordError("*Пароль не может быть пустым");
+      setPasswordError('*Пароль не может быть пустым');
       setOkPassword(false);
     } else {
-      setPasswordError("");
+      setPasswordError('');
       setOkPassword(true);
     }
   };
@@ -73,20 +73,20 @@ const SignIn = () => {
       // TODO: отправляем данные
     } else {
       if (!email && !password) {
-        setPasswordError("*Пароль не может быть пустым");
-        setEmailError("*Введите электронную почту");
+        setPasswordError('*Пароль не может быть пустым');
+        setEmailError('*Введите электронную почту');
         setOkPassword(false);
         setOkMail(false);
         setPasswordDirty(true);
         setEmailDirty(true);
       }
       if (!email) {
-        setEmailError("*Введите электронную почту");
+        setEmailError('*Введите электронную почту');
         setOkMail(false);
         setEmailDirty(true);
       }
       if (!password) {
-        setPasswordError("*Пароль не может быть пустым");
+        setPasswordError('*Пароль не может быть пустым');
         setOkPassword(false);
         setPasswordDirty(true);
       }
@@ -95,11 +95,11 @@ const SignIn = () => {
 
   return (
     <FormContainer
-      logo={"LOGO"}
-      title={"Войти"}
-      link={"Account/Registration"} // TODO  настроить верно редирект
-      textLink={"Зарегистрироваться"}
-      text={"Нет аккаунта?"}
+      logo={'LOGO'}
+      title={'Войти'}
+      link={'Account/Registration'} // TODO  настроить верно редирект
+      textLink={'Зарегистрироваться'}
+      text={'Нет аккаунта?'}
     >
       <div className={styles.innerContainer}>
         <div className={styles.innerInput}>
@@ -107,8 +107,8 @@ const SignIn = () => {
             <Input
               onBlur={blurHandler}
               type="text"
-              labelText={"E-mail"}
-              name={"E-mail"}
+              labelText={'E-mail'}
+              name={'E-mail'}
               disabled={false}
               typeInput={InputTypeEnum.Email}
               value={email}
@@ -124,8 +124,8 @@ const SignIn = () => {
             <Input
               onBlur={blurHandler}
               type="password"
-              labelText={"Пароль"}
-              name={"Пароль"}
+              labelText={'Пароль'}
+              name={'Пароль'}
               disabled={false}
               typeInput={InputTypeEnum.Password}
               value={password}
@@ -146,13 +146,13 @@ const SignIn = () => {
 
         <Button
           disabled={!validForm}
-          title={"Создать аккаунт"}
+          title={'Создать аккаунт'}
           type={ButtonTypes.Secondary}
           onClick={onSubmit}
         />
 
         <p className={styles.text}>
-          {width > 320 ? "или войдите с помощью" : "Или"}
+          {width > 320 ? 'или войдите с помощью' : 'Или'}
         </p>
 
         <div className={styles.iconsContainer}>
@@ -181,7 +181,7 @@ const SignIn = () => {
         <div className={styles.innerLink}>
           <p className={styles.textLink}>Забыли пароль?</p>
           <a className={styles.link} href="#">
-            Восстановить пароль
+            Войти
           </a>
         </div>
       </div>

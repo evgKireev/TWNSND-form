@@ -1,11 +1,11 @@
-import React, { FC, ReactElement } from "react";
-import classNames from "classnames";
-import styles from "./Button.module.scss";
+import React, { FC, ReactElement } from 'react';
+import classNames from 'classnames';
+import styles from './Button.module.scss';
 
 export enum ButtonTypes {
-  Primary = "primary",
-  Secondary = "secondary",
-  Icons = "icons",
+  Primary = 'primary',
+  Secondary = 'secondary',
+  Icons = 'icons',
 }
 
 type ButtonProps = {
