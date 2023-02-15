@@ -23,11 +23,10 @@ const FormContainer: React.FC<FormContainerType> = ({
       <div className={styles.logo}>{logo}</div>
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.innerLink}>
-        {textLink === 'Войти' ? <p className={styles.text}>{text}</p> : null}
-        <a
-          className={styles.link}
-          href={link}
-        >
+        {textLink === 'Войти' || 'Зарегистрироваться' ? (
+          <p className={styles.text}>{text}</p>
+        ) : null}
+        <a className={styles.link} href={link}>
           {textLink}
         </a>
       </div>
